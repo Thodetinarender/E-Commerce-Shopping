@@ -1,0 +1,7 @@
+
+spring:
+  thymeleaf:
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false # Set to false during development for easier debugging

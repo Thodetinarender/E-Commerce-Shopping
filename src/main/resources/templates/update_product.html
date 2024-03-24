@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=ede">
+<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+<title>Shopping</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous">
+<style>
+	*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Spartan',scans-serif;
+}
+
+h1{
+	font-size: 50px;
+	line-height: 64px;
+	color:olive;
+}
+	/*Header */
+#header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 80px;
+	background: #E3E6F3;
+	box-shadow: 0 5px;
+	z-index: 999;
+	position:sticky;
+	top: 0;
+	left: 0;
+}
+
+#navbar{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#navbar li{
+	list-style: none;
+	padding:0 20px;
+	position: relative;
+
+	}
+
+#navbar li a{
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	color:black;
+	transition: 0.3s ease;
+
+	}
+	
+#navbar li a:hover,
+#navbar li a.active{
+	color:blue;
+
+	}
+	
+#navbar li a.active::after,
+#navbar li a:hover::after{
+	content: "";
+	width:30%;
+	height: 2px;
+	background: blue;
+	position:absolute;
+	bottom: -4px;
+	left:20px;
+
+	}
+
+</style>
+
+</head>
+<body>
+<section id="header">
+  <h1>TNR Mall</h1>
+   <div>
+     <ul id="navbar">
+          <li><a href="/index">Home</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+         
+     </ul>
+   
+   </div>
+  
+</section>
+
+
+<div class="container">
+		<h1>Update Product Management System</h1>
+	
+		<h2>Update product deatils</h2>
+		
+		<form action="#" th:action="@{/ProductSave}" th:object ="${product}" method="POST">
+			<!--- add hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}"/>
+			
+			<input type="text" th:field="*{name}" 
+			class="form-control mb-4 col-4">
+			
+			<input type="text" th:field="*{description}" 
+			class="form-control mb-4 col-4">
+			
+			<input type="text" th:field="*{price}" 
+			class="form-control mb-4 col-4">
+			
+			<input type="text" th:field="*{image}" 
+			class="form-control mb-4 col-4">
+			
+			<button type="submit" class="btn btn-info col-2">Update Product</button>
+			
+		</form>
+		
+	</div>
+	
+
+
+</body>
+</html>

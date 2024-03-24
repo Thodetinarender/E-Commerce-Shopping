@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<section id="header">
+  <h1>TNR Mall</h1>
+   <div>
+     <ul id="navbar">
+          <li><a class="active" href="/index">Home</a></li>
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/account">Account</a></li>
+          <li id="lg-bag"><a href="/cart"><i class="far fa-shopping-bag"></i></a></li>
+          <a href="#" id="close" ><i class="fas fa-times"></i></a>
+     </ul>
+   </div>
+   <div id="mobile">
+     <a href="/cart"><i class="far fa-shopping-bag"></i></a>
+       <i id="bar" class="fas fa-outdent"></i>
+   </div>
+</section> 
+
+<section id="hero" >
+<h4>Trade-in-offer</h4>
+<h2>Super value deals</h2>
+<h1>On all products</h1>
+<p>Save more with coupons & up to 70% off!</p>
+<button onclick="window.location.href= '/shop'">Shop Now</button>
+</section>
+
+<section id="feature" class="section-p1">
+<div class="fe-box">
+<a href="/shop">
+<img alt="" src="Images/freeShipping.jpeg"></a>
+<a href="/shop"><h6>Free Shipping</h6></a>
+</div>
+
+<div class="fe-box">
+<img alt="" src="Images/Online Order.jpeg">
+<h6>Online Order</h6>
+</div>
+
+<div class="fe-box">
+<img alt="" src="Images/Save Money.jpeg">
+<h6>Save Money</h6>
+</div>
+
+<div class="fe-box">
+<img alt="" src="Images/Promotions.jpeg">
+<h6>Promotions</h6>
+</div>
+
+<div class="fe-box">
+<img alt="" src="Images/Happy Sell.jpeg">
+<h6>Happy Sell</h6>
+</div>
+
+<div class="fe-box">
+<img alt="" src="Images/Support.jpeg">
+<h6>Support</h6>
+</div>
+
+</section>
+
+<section id ="product1" class="section-p1"  >
+
+<h2>Featured Products</h2>
+<p>Summer Collection New Morden Design </p>
+
+
+	 <div class="Pro-container">
+		 
+		<div th:each="product : ${products}" class="pro">
+         <img alt="" th:src="${product.image}"> 
+         <div class="des">
+			 
+           <span th:text="${product.name}"></span>
+           <h5 th:text="${product.description}"></h5>
+            <div class="star">
+              <i class="fas fa-star"></i> 
+              <i class="fas fa-star"></i> 
+              <i class="fas fa-star"></i> 
+              <i class="fas fa-star"></i> 
+              <i class="fas fa-star"></i>            
+            </div>
+           <h4 th:text="${product.price}"></h4>
+         </div>
+         <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+	 </div>
+	 </div>
+ 
+</section>
+
+<section id="banner" class="section-m1">
+ <h4>Repair Services</h4>
+ <h2>Up to <span>70% off</span> All t-Shirts & Accessories</h2>
+ <button class="normal">Explore More</button>
+
+
+</section>
+
+<section id ="product1" class="section-p1"  >
+
+<h2>New Arrivals</h2>
+<p>Summer Collection New Morden Design </p>
+
+    <div class="Pro-container">
+       <div th:each="product : ${NewArrivals}"class="pro">
+        <img alt="" th:src="${product.image}"> 
+         <div class="des">
+            <span th:text="${product.name}"></span>
+           <h5 th:text="${product.description}"></h5>
+            <div class="star">
+              <i class="fas fa-star"></i> 
+              <i class="fas fa-star"></i> 
+              <i class="fas fa-star"></i> 
+              <i class="fas fa-star"></i> 
+              <i class="fas fa-star"></i>            
+            </div>
+           <h4 th:text="${product.price}"></h4>
+         </div>
+         <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+       </div>
+    </div>
+    
+</section>
+
+<section id="sm-banner" class="section-p1">
+ <div class="banner-box">
+    <h4>crazy deals</h4>
+     <h2>buy 1 get 1 free</h2>
+      <span>The best classic dress is on sale at NTR Mall</span>
+     <button class="white">Learn More</button>   
+ </div>
+ 
+  <div class="banner-box  banner-box2">
+    <h4>spring/summer</h4>
+     <h2>upcomming season</h2>
+      <span>The best classic dress is on sale at NTR Mall</span>
+     <button class="white">Collection</button>   
+  </div>
+
+</section>
+
+<section id="banner3">
+   <div class="banner-box">
+     <h2>SEASONAL SALE</h2>
+      <h3>Winter Collection -50% OFF</h3>
+   </div>
+      
+        <div class="banner-box  banner-box2">
+         <h2>NEW FOOTWEAR COLLECTION</h2>
+           <h3>Spring/Summer 2024</h3>
+        </div>  
+        
+         <div class="banner-box  banner-box3">
+         <h2>T-SHIRTS</h2>
+           <h3>New Trending Price </h3>
+         </div>  
+
+</section>
+
+<section id="newsletter" class="section-p1 section-m1">
+  <div class="newstext">
+     <h4> Sign Up For Newslatters</h4>
+     <p>Get E-mail Updates about our latest shop and <span>special offers.</span>
+     </p>
+  </div>
+    
+    <div class="form">
+       <input type="text"  placeholder="Your email address">
+       <button class="normal">Sign Up</button>
+    </div>
+    
+</section>
+
+
+<footer class="section-p1">
+   <div class="col">
+      <h1>TNR Mall</h1>
+      <h4>Contact</h4>
+      <p><strong>Address: </strong> 364 AS RAO Nager road, Street 38, Telangana </p>
+      <p><strong>Phone:</strong> +01 22745 363 / (+91) 8469639272</p>
+      <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+         
+         <div class="follow">
+           <h4>Follow us</h4>
+             <div class="icon">
+               <i class=" fab fa-facebook-f"></i>
+                 <i class=" fab fa-twitter"></i>
+                   <i class=" fab fa-instragram"></i>
+                     <i class=" fab fa-pinterest-p"></i>
+                       <i class=" fab fa-youtube"></i>
+             </div>
+         </div>
+   </div>
+   
+   <div class="col">
+     <h4>About</h4>
+       <a href="#">About us</a>
+        <a href="#">Delivery information</a>
+         <a href="#">Privacy policy</a>
+          <a href="#">Terms & Conditions</a>
+           <a href="#">Contact us</a>
+   </div>
+   
+   <div class="col">
+     <h4>My Account</h4>
+       <a th:href ="@{/registration}">Sign Up</a>
+        <a href="#">View Cart</a>
+         <a href="#">My Wishlist</a>
+          <a href="#">Track My Order</a>
+           <a href="#">Help</a>
+   </div>
+   
+   <div class="col install">
+     <h4>Install App</h4>
+      <p>From App Store or Google Play</p>
+       <div class="row">
+         <img alt="" src="Images/Payment/p1.jpeg">
+         <img alt="" src="Images/Payment/p3.jpeg">   
+       </div>
+       <p>Secured Payment Gateways</p>
+       <img alt="" src="Images/Payment/p2.jpeg">
+   </div>
+   
+   <div class="copyright">
+     <p>@2024, TNR MALL Online Shopping</p>
+   </div>
+   
+     
+</footer>
+
+</body>
+</html>
