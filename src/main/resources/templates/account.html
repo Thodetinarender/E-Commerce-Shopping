@@ -96,7 +96,7 @@ h3 {
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
            <li><a class="active"href="/account">Account</a></li>
-          <li id="lg-bag"><a class="active" href="/cart"><i class="far fa-shopping-bag"></i></a></li>
+          <li id="lg-bag"><a href="/cart"><i class="far fa-shopping-bag"></i></a></li>
           <a href="#" id="close" ><i class="fas fa-times"></i></a>
          
      </ul>
@@ -124,10 +124,7 @@ h3 {
             <label>Location:</label>
             <p></p>
         </div>
-        <div class="profile-info">
-            <label>Mobile Number:</label>
-            <p>[[${user.getMnuber()}]]</p>
-        </div>
+       
         <a href="#" class="btn-edit">Edit</a>
          <div class="logout-link" sec:authorize="isAuthenticated">
             <a th:href="@{/logout}">Logout</a>

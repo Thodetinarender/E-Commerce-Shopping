@@ -20,9 +20,17 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User save(UserDto userDto) {
-		User user = new User(userDto.getEmail(), passwordEncoder.encode(userDto.getPassword()) , userDto.getRole(), userDto.getFullname(), userDto.getMnuber());
+		User user = new User(userDto.getEmail(), passwordEncoder.encode(userDto.getPassword()) , userDto.getRole(), userDto.getFullname());
 		return userRepository.save(user);
 	}
 
-
+	 @Override
+	    public User findById(Long userId) {
+	        return userRepository.findById(userId).orElse(null);
+	    }
+	 
+	 @Override
+	    public User findByEmail(String email) {
+	        return userRepository.findByEmail(email);
+	    }
 }

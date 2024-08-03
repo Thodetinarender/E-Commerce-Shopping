@@ -13,15 +13,21 @@
   <h1>TNR Mall</h1>
    <div>
      <ul id="navbar">
+		  <form action="/search" method="POST">
+                <input type="text" name="query" placeholder="Search Products..." >
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
           <li><a class="active" href="/index">Home</a></li>
           <li><a href="/shop">Shop</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
           <li><a href="/account">Account</a></li>
-          <li id="lg-bag"><a href="/cart"><i class="far fa-shopping-bag"></i></a></li>
+          <li><a href="/cart">Cart</a></li>
           <a href="#" id="close" ><i class="fas fa-times"></i></a>
      </ul>
+     
+    
    </div>
    <div id="mobile">
      <a href="/cart"><i class="far fa-shopping-bag"></i></a>
@@ -34,7 +40,7 @@
 <h2>Super value deals</h2>
 <h1>On all products</h1>
 <p>Save more with coupons & up to 70% off!</p>
-<button onclick="window.location.href= '/shop'">Shop Now</button>
+<button onclick="window.location.href= '/shop'">Search</button>
 </section>
 
 <section id="feature" class="section-p1">
@@ -94,7 +100,9 @@
             </div>
            <h4 th:text="${product.price}"></h4>
          </div>
-         <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        <form th:action="@{/cart/{id}(id=${product.id})}" method="Post">
+                <button type="submit"><i class="fal fa-shopping-cart cart"></i></button>
+            </form>
 	 </div>
 	 </div>
  
@@ -128,7 +136,9 @@
             </div>
            <h4 th:text="${product.price}"></h4>
          </div>
-         <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <form th:action="@{/cart/{id}(id=${product.id})}" method="Post">
+                <button type="submit"><i class="fal fa-shopping-cart cart"></i></button>
+            </form>
        </div>
     </div>
     

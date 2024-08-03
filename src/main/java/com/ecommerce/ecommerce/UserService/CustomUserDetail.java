@@ -26,9 +26,6 @@ public class CustomUserDetail implements UserDetails {
 		return user.getFullname();
 	}
 	
-	public Long getMnuber() {
-		return user.getMnuber();
-	}
 
 	@Override
 	public String getPassword() {

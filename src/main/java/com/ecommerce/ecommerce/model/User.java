@@ -19,19 +19,19 @@ public class User {
 	private String password;
 	private String role;
 	private String fullname;
-	private Long Mnuber;
+	
 	
 	public User() {
 		super();
 	}
 
-	public User(String email, String password, String role, String fullname, Long Mnuber) {
+	public User(String email, String password, String role, String fullname) {
 		
 		this.email = email;
 		this.password = password;
 		this.role = role;
 		this.fullname = fullname;
-		this.Mnuber = Mnuber;
+		
 	}
 
 	public Long getId() {
@@ -74,13 +74,7 @@ public class User {
 		this.fullname = fullname;
 	}
 
-	public Long getMnuber() {
-		return Mnuber;
-	}
-
-	public void setMnuber(Long mnuber) {
-		Mnuber = mnuber;
-	}
+	
 	
 	
 	

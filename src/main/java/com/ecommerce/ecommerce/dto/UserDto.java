@@ -6,21 +6,22 @@ public class UserDto {
 	private String password;
 	private String role;
 	private String fullname;
-	private long Mnuber;
 	
-	public UserDto(String email, String password, String role, String fullname, long Mnuber) {
+	
+	public UserDto(String email, String password, String role, String fullname) {
 		super();
-		this.email = email;
+		this.email = email; 
 		this.password = password;
 		this.role = role;
 		this.fullname = fullname;
-		this.Mnuber =Mnuber;
+		
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -49,13 +50,7 @@ public class UserDto {
 		this.fullname = fullname;
 	}
 
-	public long getMnuber() {
-		return Mnuber;
-	}
-
-	public void setMnuber(long mnuber) {
-		Mnuber = mnuber;
-	}
+	
 	
 	
 	

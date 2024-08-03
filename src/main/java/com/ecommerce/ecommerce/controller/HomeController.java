@@ -29,21 +29,13 @@ public class HomeController {
 	 	  
 	//home page Controller
 	
-	@GetMapping("/")
+	@GetMapping({"/", "/index"})
 	public String showProductPage(Model model) {
 		model.addAttribute("products", productService.getAllProducts());
 		model.addAttribute("NewArrivals", productService.getNewArrivals());
 		return "index"; // This maps to product.html template
 	}
 	
-	@GetMapping("/index")
-	public String showProductPages(Model model) {
-		model.addAttribute("products", productService.getAllProducts());
-		model.addAttribute("NewArrivals", productService.getNewArrivals());
-		return "index"; // This maps to product.html template
-	}
-	
-
 	@GetMapping("/adminShowProducts")
 	public String adminShowProducts(Model model) {
 		model.addAttribute("products", productService.getAllProducts());
@@ -82,10 +74,7 @@ public class HomeController {
 		return  "account"; // Returns contact.html 
 	}
 	
-	@GetMapping("/cart")
-	public String cart() {
-		return "cart"; // Returns cart.html
-	}
+	
 
 	@GetMapping("/sproduct")
 	public String sproduct() {
@@ -158,7 +147,7 @@ public class HomeController {
 
 	//.............................................../
 
-
+	
 	
 
 }

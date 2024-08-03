@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.ecommerce.ecommerce.UserService.UserService;
 import com.ecommerce.ecommerce.dto.UserDto;
-import com.ecommerce.ecommerce.model.User;
 
 @Controller
 public class UserController {
@@ -50,7 +49,7 @@ public class UserController {
 	public String userPage (Model model, Principal principal) {
 		UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
 		model.addAttribute("user", userDetails);
-		return homeController.showProductPages(model);
+		return homeController.showProductPage(model);
 	}
 	
 	
